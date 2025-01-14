@@ -1,24 +1,29 @@
 # emprestimo_spring
 Simulador de empréstimos de acordo com os parametros passados - JAVA+Spring Boot
 
-Empréstimos
+# Empréstimos
+
 Seu desafio será implementar um serviço que determine quais modalidades de empréstimo uma pessoa tem acesso.
 
-Exemplo
+## Exemplo
+
 As modalidades de empréstimo que serão analisadas são:
 
-Empréstimo pessoal: Taxa de juros de 4%.
-Empréstimo consignado: Taxa de juros de 2%.
-Empréstimo com garantia: Taxa de juros de 3%.
+- **Empréstimo pessoal**: Taxa de juros de 4%.
+- **Empréstimo consignado**: Taxa de juros de 2%.
+- **Empréstimo com garantia**: Taxa de juros de 3%.
+
 As modalidades de empréstimo disponíveis para uma pessoa são baseadas em algumas variáveis específicas, são elas:
 
-Idade
-Salário
-Localização
+- **Idade**
+- **Salário**
+- **Localização**
+
 Seu serviço recebe uma chamada para determinar quais modalidades de empréstimo uma pessoa tem acesso.
 
-[POST] {{host}}/customer-loans
+**[POST]** `{{host}}/customer-loans`
 
+```json
 {
     "age": 26,
     "cpf": "275.484.389-23",
@@ -26,9 +31,16 @@ Seu serviço recebe uma chamada para determinar quais modalidades de empréstimo
     "income": 7000.00,
     "location": "SP"
 }
-Seu serviço deve retornar uma resposta contendo o nome do cliente e uma lista de empréstimos aos quais ele tem acesso, com os respectivos tipos e taxas de juros.
+```
 
+Seu serviço deve retornar uma resposta contendo o nome do cliente e uma lista de empréstimos aos quais ele tem acesso,
+com os respectivos tipos e taxas de juros.
+
+```
 HTTP/1.1 200 Ok
+```
+
+```json
 {
     "customer": "Vuxaywua Zukiagou",
     "loans": [
@@ -46,9 +58,14 @@ HTTP/1.1 200 Ok
         }
     ]
 }
-Requisitos
-Conceder o empréstimo pessoal se o salário do cliente for igual ou inferior a R$ 3000.
-Conceder o empréstimo pessoal se o salário do cliente estiver entre R$ 3000 e R$ 5000, se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
-Conceder o empréstimo consignado se o salário do cliente for igual ou superior a R$ 5000.
-Conceder o empréstimo com garantia se o salário do cliente for igual ou inferior a R$ 3000.
-Conceder o empréstimo com garantia se o salário do cliente estiver entre R$ 3000 e R$ 5000, se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
+```
+
+## Requisitos
+
+- Conceder o empréstimo pessoal se o salário do cliente for igual ou inferior a R$ 3000.
+- Conceder o empréstimo pessoal se o salário do cliente estiver entre R$ 3000 e R$ 5000, se o cliente tiver menos de 30
+  anos e residir em São Paulo (SP).
+- Conceder o empréstimo consignado se o salário do cliente for igual ou superior a R$ 5000.
+- Conceder o empréstimo com garantia se o salário do cliente for igual ou inferior a R$ 3000.
+- Conceder o empréstimo com garantia se o salário do cliente estiver entre R$ 3000 e R$ 5000, se o cliente tiver
+  menos de 30 anos e residir em São Paulo (SP).
